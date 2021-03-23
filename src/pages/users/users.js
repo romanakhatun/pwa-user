@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Table } from 'react-bootstrap';
 import './user.css';
 import avatar from '../../images/avatar.png';
 
@@ -18,7 +17,8 @@ const Users = () => {
       let collection = localStorage.getItem('users');
       setData(JSON.parse(collection))
     })
-  }, [])
+  }, []);
+
   return (
     <div>
       <div>
@@ -41,38 +41,6 @@ const Users = () => {
           ))
         }
       </div>
-
-      {/* <div>
-        {
-          mode === 'offline' ?
-            <div className="alert alert-warning" role="alert">
-              <p>you are in offline mode or some issue with connection</p>
-            </div> : null
-        }
-      </div>
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Address</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            data.map((item, idx) => (
-              <tr key={idx}>
-                <td>{item.id}</td>
-                <td>{item.name}</td>
-                <td>{item.email}</td>
-                <td>{item.address.street}</td>
-              </tr>
-            ))
-          }
-
-        </tbody>
-      </Table> */}
     </div>
   );
 };

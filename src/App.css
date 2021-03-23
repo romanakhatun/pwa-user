@@ -2,6 +2,10 @@ body{
   margin: 0;
   padding: 0;
 }
+::selection{
+  background-color: #FB8C00;
+  color: #fff;
+}
 .about{
   text-align: center;
 }
