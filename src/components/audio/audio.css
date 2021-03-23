@@ -1,0 +1,7 @@
+video, audio{
+  display: block;
+  margin: 0 auto;
+}
+video:focus, audio:focus{
+  outline: none;
+}

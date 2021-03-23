@@ -1,42 +1,43 @@
-let cacheData = "appV1";
-this.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(cacheData).then((cache) => {
-      cache.addAll([
-        '/static/js/main.chunk.js',
-        '/static/js/0.chunk.js',
-        '/static/js/bundle.js',
-        '/static/css/main.chunk.css',
-        '/bootstrap.min.css',
-        '/index.html',
-        '/',
-        "/users"
-      ])
-    })
+const cacheName = "v3";
+const self = this;
+const cacheAssets = [
+  '/static/js/main.chunk.js',
+  '/static/js/0.chunk.js',
+  '/static/js/bundle.js',
+  '/static/css/main.chunk.css',
+  '/index.html',
+  '/',
+  '/src/pages/users',
+  '/users',
+
+];
+
+self.addEventListener("install", e => {
+  e.waitUntil(
+    caches.open(cacheName)
+      .then(cache => {
+        cache.addAll(cacheAssets)
+      })
   )
-})
-this.addEventListener("fetch", (event) => {
+});
 
-
-  // console.warn("url",event.request.url)
-
-
+self.addEventListener("fetch", e => {
   if (!navigator.onLine) {
-    if (event.request.url === "http://localhost:3000/static/js/main.chunk.js") {
-      event.waitUntil(
-        this.registration.showNotification("Internet", {
+    if (e.request.url === "http://localhost:3000/static/js/main.chunk.js") {
+      e.waitUntil(
+        self.registration.showNotification("Internet", {
           body: "internet not working",
         })
       )
     }
-    event.respondWith(
-      caches.match(event.request).then((resp) => {
-        if (resp) {
-          return resp
+    e.respondWith(
+      caches.match(e.request).then(res => {
+        if (res) {
+          return res;
         }
-        let requestUrl = event.request.clone();
+        const requestUrl = e.request.clone();
         fetch(requestUrl)
       })
     )
   }
-})
+});

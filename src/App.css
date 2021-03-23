@@ -9,3 +9,7 @@ body{
 .about{
   text-align: center;
 }
+.columns{
+  display: block;
+  margin: 0 auto;
+}

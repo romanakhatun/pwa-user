@@ -5,18 +5,20 @@ import avatar from '../../images/avatar.png';
 const Users = () => {
   const [data, setData] = useState([])
   const [mode, setMode] = useState('online');
+
   useEffect(() => {
-    let url = "https://jsonplaceholder.typicode.com/users"
-    fetch(url).then((response) => {
-      response.json().then((result) => {
-        setData(result)
-        localStorage.setItem("users", JSON.stringify(result))
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(res => {
+        res.json()
+          .then(res => {
+            setData(res)
+            localStorage.setItem("users", JSON.stringify(res))
+          })
+      }).catch(err => {
+        setMode('offline')
+        let collection = localStorage.getItem('users');
+        setData(JSON.parse(collection))
       })
-    }).catch(err => {
-      setMode('offline')
-      let collection = localStorage.getItem('users');
-      setData(JSON.parse(collection))
-    })
   }, []);
 
   return (
@@ -31,14 +33,14 @@ const Users = () => {
       </div>
       <div className="userContainer">
         {
-          data.map((item, idx) => (
+          data.map((item, idx) =>
             <div key={idx} className="singleUser">
-              <img className="avatar" src={avatar} alt="" />
+              <img className="avatar" src={avatar} alt="avatar" />
               <p>{item.name}</p>
               <p>{item.email}</p>
               <p>{item.address.street}</p>
             </div>
-          ))
+          )
         }
       </div>
     </div>
