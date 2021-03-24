@@ -18,7 +18,7 @@ const Install = () => {
           <li>Works offline</li>
         </ul>
       ),
-      description: "It's PWA App. It's working in offline. You can be install your browser 🙌️",
+      description: "It's PWA App. It's working offline. You can install your browser 🙌️",
     })
   };
 
