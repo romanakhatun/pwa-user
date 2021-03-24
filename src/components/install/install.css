@@ -1,3 +1,24 @@
-.add-to{
-  display: block;
+.install{
+  font-family: 'Montserrat', sans-serif;
+}
+button{
+  border: none;
+}
+.features{
+  list-style: circle;
+}
+.MuiButton-containedPrimary{
+  background-color: #FB8C00!important;
+}
+.MuiTypography-h6,
+.MuiTypography-subtitle1,
+.MuiTypography-subtitle1 {
+  font-weight: 800!important;
+}
+.MuiButton-containedPrimary, 
+.MuiButton-root, 
+.MuiTypography-subtitle1,
+.MuiTypography-h6,
+.MuiTypography-body2 {
+  font-family: 'Montserrat', sans-serif!important;
 }

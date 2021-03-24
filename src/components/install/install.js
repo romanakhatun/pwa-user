@@ -1,33 +1,33 @@
 import React from 'react';
-import './install.css'
+import { useReactPWAInstall } from 'react-pwa-install';
+import './install.css';
+import logo from '../../images/logo.png'
 
 const Install = () => {
 
-  let deferredPrompt;
-  const buttonInstall = document.querySelector('.add-to-btn');
+  const { pwaInstall, supported, isInstalled } = useReactPWAInstall();
 
-  window.addEventListener('beforeInstallPrompt', (e) => {
-    e.preventDefault();
-    // deferredPrompt = e;
-    // showInstallPromotion();
-    console.log(`'beforeInstallPrompt' event was fired.`);
-  });
-  // buttonInstall.addEventListener('click', async () => {
-  //   // hideInstallPromotion();
-  //   deferredPrompt.prompt();
-  //   // const { outcome } = await deferredPrompt.userChoice;
-  //   // console.log(`User response to the install prompt: ${outcome}`);
-  //   deferredPrompt = null;
-  // });
-  // window.addEventListener('appInstalled', () => {
-  //   // hideInstallPromotion();
-  //   deferredPrompt = null;
-  //   console.log('PWA was installed');
-  // });
+  const handleClick = () => {
+    pwaInstall({
+      title: "Install User App",
+      logo: logo,
+      features: (
+        <ul className="features">
+          <li>Camera access</li>
+          <li>Installable</li>
+          <li>Works offline</li>
+        </ul>
+      ),
+      description: "It's PWA App. It's working in offline. You can be install your browser 🙌️",
+    })
+  };
+
 
   return (
-    <div className="add-to">
-      <button className="add-to-btn">Add to home screen</button>
+    <div className="install">
+      {supported() && !isInstalled() && (
+        <button type="button" onClick={handleClick}>Install</button>
+      )}
     </div>
   );
 };

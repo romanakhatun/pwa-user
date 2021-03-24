@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
     "bootstrap": "^4.6.0",
     "cra-template": "1.1.2",
     "firebase": "^8.3.1",
@@ -10,6 +11,7 @@
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.1",
     "react-icons": "^4.2.0",
+    "react-pwa-install": "^1.0.12",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3"
   },
