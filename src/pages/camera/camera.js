@@ -1,7 +1,7 @@
 import React from 'react';
-import './audio.css'
+import './camera.css'
 
-const Audio = () => {
+const Camera = () => {
 
   function getUserMedia(constraints) {
     if (navigator.mediaDevices) {
@@ -43,14 +43,15 @@ const Audio = () => {
         // document.querySelector('.error')
       });
   };
-
   return (
-    <div class="camera">
-      <video width="320" height="240" onclick={getStream('video')} controls autoplay></video>
-      <audio onclick={getStream('audio')} controls></audio>
-      {/* <p className="error">{err}</p> */}
+    <div>
+      <div class="camera">
+        <video width="320" height="240" onclick={getStream('video')} controls autoplay></video>
+        <audio onclick={getStream('audio')} controls></audio>
+        {/* <p className="error">{err}</p> */}
+      </div>
     </div>
   );
 };
 
-export default Audio;
+export default Camera;

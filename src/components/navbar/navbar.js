@@ -7,6 +7,7 @@ const Navbar = () => {
     <header className="header">
       <Link to="/">About</Link>
       <Link to="/user">User</Link>
+      <Link to="/camera">Camera</Link>
     </header>
   );
 };
