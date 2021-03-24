@@ -2,7 +2,6 @@ import React from 'react';
 import './camera.css'
 
 const Camera = () => {
-
   function getUserMedia(constraints) {
     if (navigator.mediaDevices) {
       return navigator.mediaDevices.getUserMedia(constraints);
