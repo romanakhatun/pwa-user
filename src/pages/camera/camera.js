@@ -40,7 +40,6 @@ const Camera = () => {
       })
       .catch(function (err) {
         // alert('Error: ' + err);
-        // document.querySelector('.error')
       });
   };
   return (
@@ -48,7 +47,6 @@ const Camera = () => {
       <div class="camera">
         <video width="320" height="240" onclick={getStream('video')} controls autoplay></video>
         <audio onclick={getStream('audio')} controls></audio>
-        {/* <p className="error">{err}</p> */}
       </div>
     </div>
   );
