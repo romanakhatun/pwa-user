@@ -1,20 +1,23 @@
-.aboutSection{    
+.aboutSection {
   text-align: center;
   margin: 30px 0;
   height: 100vh;
 }
-.aboutSection img{
+.aboutSection img {
   width: 13%;
   text-align: center;
   border-radius: 50%;
   margin: 10px 0;
 }
-.faLinkedin, .faGithubSquare{
+.faLinkedin,
+.faGithubSquare {
   font-size: 30px;
 }
-.faLinkedin, .faLinkedin:hover{
+.faLinkedin,
+.faLinkedin:hover {
   color: #0056b3;
 }
-.faGithubSquare, .faGithubSquare:hover{
+.faGithubSquare,
+.faGithubSquare:hover {
   color: #343a40;
 }

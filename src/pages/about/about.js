@@ -1,7 +1,7 @@
 import React from 'react';
-import './about.css';
-import { FaLinkedin, FaGithubSquare } from 'react-icons/fa';
+import { FaGithubSquare, FaLinkedin } from 'react-icons/fa';
 import about from '../../images/about.png';
+import './about.css';
 
 const About = () => {
   return (

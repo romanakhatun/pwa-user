@@ -1,5 +1,5 @@
 import React from 'react';
-import './camera.css'
+import './camera.css';
 
 const Camera = () => {
   function getUserMedia(constraints) {
@@ -38,14 +38,14 @@ const Camera = () => {
         mediaControl.play();
       })
       .catch(function (err) {
-        // alert('Error: ' + err);
+        alert('Error: ' + err);
       });
   };
   return (
     <div>
-      <div class="camera">
-        <video width="320" height="240" onclick={getStream('video')} controls autoplay></video>
-        <audio onclick={getStream('audio')} controls></audio>
+      <div className="camera">
+        <video width="320" height="240" onClick={getStream('video')} controls autoPlay></video>
+        <audio onClick={getStream('audio')} controls></audio>
       </div>
     </div>
   );

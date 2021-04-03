@@ -11,7 +11,6 @@ const cacheAssets = [
   '/users',
 
 ];
-
 self.addEventListener("install", e => {
   e.waitUntil(
     caches.open(cacheName)
